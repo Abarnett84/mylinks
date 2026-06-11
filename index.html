@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABCO • Link Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --neon-cyan: #67e8f9;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Space Grotesk', 'Inter', system_ui, sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+        }
+
+        .futuristic-bg {
+            background: #050505;
+            background-image: 
+                radial-gradient(circle at 50% 20%, rgba(103, 232, 249, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(52, 211, 153, 0.02) 0%, transparent 40%);
+        }
+
+        .section-header {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            font-weight: 600;
+        }
+
+        .link-btn {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .link-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255,255,255,0.08),
+                transparent
+            );
+            transition: 0.6s;
+        }
+        
+        .link-btn:hover::before {
+            left: 200%;
+        }
+
+        .link-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3), 
+                       0 0 0 1px #67e8f9,
+                       0 0 25px -5px rgb(103 232 249 / 0.25);
+            border-color: #67e8f9;
+        }
+
+        .neon-text {
+            text-shadow: 0 0 10px rgb(103 232 249 / 0.3);
+        }
+
+        .minimal-grid {
+            background-image: 
+                linear-gradient(rgba(103, 232, 249, 0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(103, 232, 249, 0.035) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: 0.6;
+        }
+
+        .logo-glow {
+            filter: drop-shadow(0 0 12px rgba(103, 232, 249, 0.15));
+        }
+
+        .btn-content {
+            transition: all 0.2s ease;
+        }
+
+        .link-btn:hover .btn-content {
+            transform: translateX(2px);
+        }
+
+        .destination {
+            font-size: 0.75rem;
+            opacity: 0.6;
+            transition: all 0.2s ease;
+        }
+        
+        .link-btn:hover .destination {
+            opacity: 0.85;
+            color: #67e8f9;
+        }
+    </style>
+</head>
+<body class="futuristic-bg text-white min-h-screen py-10 px-4">
+    <div class="max-w-[860px] mx-auto">
+        
+        <!-- Header with Logo -->
+        <div class="flex flex-col items-center mb-8">
+            <div class="mb-5">
+                <img src="abco-logo.png" 
+                     alt="ABCO Futuristic Logo" 
+                     class="h-20 w-auto logo-glow">
+            </div>
+            
+            <!-- Title -->
+            <div class="text-center">
+                <h1 class="font-display text-6xl tracking-tighter font-semibold">ABCO</h1>
+                <p class="text-xl text-zinc-400 -mt-1 tracking-[3px]">EDIT. ANYTHING.</p>
+            </div>
+        </div>
+
+        <!-- Short intro sentence -->
+        <div class="text-center mb-10 max-w-md mx-auto">
+            <p class="text-lg text-zinc-300 leading-relaxed">
+                One clean hub for everything I create, share, and build.
+            </p>
+            <p class="text-sm text-zinc-500 mt-1.5">Professional • Creative • Technical</p>
+        </div>
+
+        <!-- Two Column Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            
+            <!-- LEFT COLUMN: Media & Professional -->
+            <div>
+                <div class="flex items-center gap-3 mb-4 px-1">
+                    <div class="h-px flex-1 bg-gradient-to-r from-transparent via-zinc-700 to-transparent"></div>
+                    <div class="section-header text-cyan-400">MEDIA &amp; PROFESSIONAL</div>
+                    <div class="h-px flex-1 bg-gradient-to-l from-transparent via-zinc-700 to-transparent"></div>
+                </div>
+                
+                <div class="space-y-3">
+                    
+                    <!-- Button 1 -->
+                    <a href="https://youtube.com" target="_blank" 
+                       class="link-btn group block bg-zinc-900 border border-zinc-800 hover:border-cyan-400 rounded-3xl px-5 py-4">
+                        <div class="flex items-center gap-4 btn-content">
+                            <div class="w-9 h-9 flex-shrink-0 rounded-2xl bg-zinc-950 border border-zinc-800 flex items-center justify-center text-xl">
+                                ▶︎
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="font-semibold text-lg tracking-tight">YouTube Channel</div>
+                                <div class="destination text-zinc-400">youtube.com/@ABarnett_84 • Shorts &amp; Videos</div>
+                            </div>
+                            <div class="text-cyan-400/70 group-hover:text-cyan-400 transition-colors">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-lg"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Button 2 -->
+                    <a href="https://abcomedia.net" target="_blank" 
+                       class="link-btn group block bg-zinc-900 border border-zinc-800 hover:border-cyan-400 rounded-3xl px-5 py-4">
+                        <div class="flex items-center gap-4 btn-content">
+                            <div class="w-9 h-9 flex-shrink-0 rounded-2xl bg-zinc-950 border border-zinc-800 flex items-center justify-center text-xl">
+                                🌐
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="font-semibold text-lg tracking-tight">Main Website</div>
+                                <div class="destination text-zinc-400">abcomedia.net • Creative Operating System</div>
+                            </div>
+                            <div class="text-cyan-400/70 group-hover:text-cyan-400 transition-colors">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-lg"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Button 3 -->
+                    <a href="#" target="_blank" 
+                       class="link-btn group block bg-zinc-900 border border-zinc-800 hover:border-cyan-400 rounded-3xl px-5 py-4">
+                        <div class="flex items-center gap-4 btn-content">
+                            <div class="w-9 h-9 flex-shrink-0 rounded-2xl bg-zinc-950 border border-zinc-800 flex items-center justify-center text-xl">
+                                ✦
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="font-semibold text-lg tracking-tight">Services &amp; Portfolio</div>
+                                <div class="destination text-zinc-400">Video • Image • Audio • Web • AI Editing</div>
+                            </div>
+                            <div class="text-cyan-400/70 group-hover:text-cyan-400 transition-colors">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-lg"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Button 4 -->
+                    <a href="#" target="_blank" 
+                       class="link-btn group block bg-zinc-900 border border-zinc-800 hover:border-cyan-400 rounded-3xl px-5 py-4">
+                        <div class="flex items-center gap-4 btn-content">
+                            <div class="w-9 h-9 flex-shrink-0 rounded-2xl bg-zinc-950 border border-zinc-800 flex items-center justify-center text-xl">
+                                📰
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="font-semibold text-lg tracking-tight">Rev-AI-lution Newsletter</div>
+                                <div class="destination text-zinc-400">Digital media, AI tools &amp; creative tech</div>
+                            </div>
+                            <div class="text-cyan-400/70 group-hover:text-cyan-400 transition-colors">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-lg"></i>
+                            </div>
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Tech, Tools & Social -->
+            <div>
+                <div class="flex items-center gap-3 mb-4 px-1">
+                    <div class="h-px flex-1 bg-gradient-to-r from-transparent via-zinc-700 to-transparent"></div>
+                    <div class="section-header text-emerald-400">TECH, TOOLS &amp; SOCIAL</div>
+                    <div class="h-px flex-1 bg-gradient-to-l from-transparent via-zinc-700 to-transparent"></div>
+                </div>
+                
+                <div class="space-y-3">
+                    
+                    <!-- Button 1 -->
+                    <a href="https://x.com/ABarnett_84" target="_blank" 
+                       class="link-btn group block bg-zinc-900 border border-zinc-800 hover:border-emerald-400 rounded-3xl px-5 py-4">
+                        <div class="flex items-center gap-4 btn-content">
+                            <div class="w-9 h-9 flex-shrink-0 rounded-2xl bg-zinc-950 border border-zinc-800 flex items-center justify-center text-xl">
+                                𝕏
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="font-semibold text-lg tracking-tight">X / Twitter</div>
+                                <div class="destination text-zinc-400">@ABarnett_84 • Updates &amp; thoughts</div>
+                            </div>
+                            <div class="text-emerald-400/70 group-hover:text-emerald-400 transition-colors">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-lg"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Button 2 -->
+                    <a href="#" target="_blank" 
+                       class="link-btn group block bg-zinc-900 border border-zinc-800 hover:border-emerald-400 rounded-3xl px-5 py-4">
+                        <div class="flex items-center gap-4 btn-content">
+                            <div class="w-9 h-9 flex-shrink-0 rounded-2xl bg-zinc-950 border border-zinc-800 flex items-center justify-center text-xl">
+                                &lt;/&gt;
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="font-semibold text-lg tracking-tight">GitHub &amp; Code</div>
+                                <div class="destination text-zinc-400">Custom tools, Python scripts, bots</div>
+                            </div>
+                            <div class="text-emerald-400/70 group-hover:text-emerald-400 transition-colors">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-lg"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Button 3 -->
+                    <a href="#" target="_blank" 
+                       class="link-btn group block bg-zinc-900 border border-zinc-800 hover:border-emerald-400 rounded-3xl px-5 py-4">
+                        <div class="flex items-center gap-4 btn-content">
+                            <div class="w-9 h-9 flex-shrink-0 rounded-2xl bg-zinc-950 border border-zinc-800 flex items-center justify-center text-xl">
+                                🤖
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="font-semibold text-lg tracking-tight">AI Experiments</div>
+                                <div class="destination text-zinc-400">OpenClaw • Custom agents • Creative AI</div>
+                            </div>
+                            <div class="text-emerald-400/70 group-hover:text-emerald-400 transition-colors">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-lg"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Button 4 -->
+                    <a href="mailto:abcomediaediting@gmail.com" 
+                       class="link-btn group block bg-zinc-900 border border-zinc-800 hover:border-emerald-400 rounded-3xl px-5 py-4">
+                        <div class="flex items-center gap-4 btn-content">
+                            <div class="w-9 h-9 flex-shrink-0 rounded-2xl bg-zinc-950 border border-zinc-800 flex items-center justify-center text-xl">
+                                ✉︎
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="font-semibold text-lg tracking-tight">Direct Contact</div>
+                                <div class="destination text-zinc-400">abcomediaediting@gmail.com</div>
+                            </div>
+                            <div class="text-emerald-400/70 group-hover:text-emerald-400 transition-colors">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-lg"></i>
+                            </div>
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Subtle footer / tagline -->
+        <div class="mt-12 text-center">
+            <div class="inline-flex items-center gap-2 text-xs tracking-[2px] text-zinc-500">
+                <div class="h-px w-8 bg-zinc-800"></div>
+                MINIMAL • FUTURISTIC • PRECISE
+                <div class="h-px w-8 bg-zinc-800"></div>
+            </div>
+            <p class="text-[10px] text-zinc-600 mt-3">Click any button to open the link • Edit this page to customize</p>
+        </div>
+
+    </div>
+
+    <script>
+        // Tailwind script for any extra config if needed
+        function initializeTailwind() {
+            // Already using CDN, this is placeholder for future tweaks
+            console.log('%c[ABCO Link Hub] Futuristic minimal mock-up ready.', 'color:#3f3f46');
+        }
+        
+        window.onload = function() {
+            initializeTailwind();
+            
+            // Optional: subtle keyboard hint
+            document.addEventListener('keydown', function(e) {
+                if (e.key === "?" && document.activeElement.tagName === "BODY") {
+                    const firstBtn = document.querySelector('.link-btn');
+                    if (firstBtn) firstBtn.focus();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
